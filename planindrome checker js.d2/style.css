@@ -1,0 +1,36 @@
+*{
+    background-color: rgb(208, 185, 185);
+    color: beige;
+}
+
+.text{
+    color: rgb(245, 230, 211);
+    text-align: center;
+    padding: 2%;
+}
+
+
+.inputbox{
+    margin-top: 15%;
+    margin-left: 40%;
+}
+#input{
+    background-color: bisque;
+    color: rgb(0, 0, 0);
+    width: 25vh;
+    border-radius: 5px;
+    height: 4%;
+    border-color: bisque;
+
+}
+
+.buttom{
+    margin-left: 2%;
+    background-color: bisque;
+    color: rgba(192, 165, 177, 0.885);
+    width: 15vh;
+    border-radius: 5px;
+    height: 10%;
+    border-color: bisque;
+
+}
