@@ -1,30 +1,34 @@
-let secondsElapsed = 0;
+let ms = 0;
 let interval = null;
 const time = document.getElementById("timer"); 
 
-function padStart(value) {
-    return String(value).padStart(2, "0");
+function padStart(value, length = 2) {
+    return String(value).padStart(length, "0");
 }
 
 function setTime() {
-    const minutes = Math.floor(secondsElapsed / 60);
-    const seconds = secondsElapsed % 60;
-    time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}`;
+    const totalMilliseconds = ms * 75;
+    const totalSeconds = Math.floor(totalMilliseconds / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    const milliseconds = totalMilliseconds % 1000;
+    
+    time.innerHTML = `${padStart(minutes)}:${padStart(seconds)}:${padStart(Math.floor(milliseconds / 10), 2)}`;
 }
 
 function timer() {
-    secondsElapsed++;
+    ms++;
     setTime();
 }
 
 function startbutton() {
     if (interval) stopbutton();
-    interval = setInterval(timer, 1000);
+    interval = setInterval(timer, 75);
 }
 
 function resetbutton() {
     stopbutton();
-    secondsElapsed = 0;
+    ms = 0;
     setTime();
 }
 
